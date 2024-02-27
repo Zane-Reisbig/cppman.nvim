@@ -19,7 +19,7 @@ local function reload(manwidth, word_to_search)
 
     vim.api.nvim_buf_set_lines(0, 0, -1, true, {})
 
-	local cmd = string.format([[0r! cppman --force-columns %s '%s' ]], manwidth, word_to_search)
+	local cmd = string.format([[0r! wsl cppman --force-columns %s '%s' ]], manwidth, word_to_search)
 	vim.cmd(cmd) -- Set buffer with cppman contents
 	vim.cmd("0") -- Go to top of document
     
